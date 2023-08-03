@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:1rem;
+    border:1px solid transparent;
+}
+.btn.bg--dark{
+    @apply bg-dark hover:bg-[#0071bc] text-light rounded
+}
+
+@layer components{
+    .header{
+        @apply bg-white fixed w-full drop-shadow-md 
+    }
+    .header .header__wrapper {
+        @apply px-[1rem] py-[.8rem]  flex items-center justify-between relative 
+    }
+    .header .header__nav {
+        @apply absolute bg-white top-[4.1rem] right-[-40rem] h-[100vh] w-[65vw] flex flex-col transition-all 
+        
+    }
+    .header .header__nav.open{
+        @apply right-[0rem]  transition-all 
+    }
+    .header .header__nav{
+        @apply px-[2rem] py-[3rem] 
+    }
+    .header .nav{
+        @apply border-t-[1px] border-gray-400
+    }
+    .header .header__nav li{
+        @apply py-[1rem]
+    }
+    .header .header__nav li#store{
+        @apply px-[1rem]
+    }
+
+    .toggle__menu{
+        @apply flex flex-col gap-[.2rem] lg:hidden
+    }
+    .toggle__menu span{
+        @apply w-[1.2rem] h-[2px] bg-[#2b2b2b] block rounded-full
+    }
+}
