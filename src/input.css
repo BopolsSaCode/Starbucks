@@ -18,7 +18,7 @@
 }
 
 .btn.bg--dark{
-    @apply bg-black border-[1px] border-white hover:bg-[#292929] text-white rounded-full
+    @apply bg-black border-[1px] border-black hover:bg-[#292929] text-white rounded-full
 }
 
 
@@ -27,28 +27,28 @@
         @apply bg-white fixed w-full drop-shadow-md 
     }
     .header .header__wrapper {
-        @apply px-[1rem] py-[.8rem]  flex items-center justify-between relative
+        @apply px-[1rem] py-[.8rem] lg:p-[2rem]  flex items-center justify-between relative
     }
     .header .header__nav {
-        @apply absolute bg-white top-[4.1rem] right-[-40rem] h-[100vh] w-[65vw] flex flex-col transition-all lg:static lg:flex lg:flex-row lg:h-[0%]
+        @apply absolute bg-white top-[4.1rem] right-[-40rem] h-[100vh] w-[65vw] flex flex-col transition-all p-[2rem] lg:p-[0rem] lg:static lg:flex lg:flex-row lg:h-[0%] 
     }
     .header .header__nav.open{
         @apply right-[0rem]  transition-all
     }
     .header .header__nav ul {
-        @apply flex flex-col p-[1.5rem] lg:flex-row lg:p-[0rem] lg:gap-[2rem]
+        @apply flex flex-col lg:flex-row lg:p-[0rem] lg:gap-[2rem]
     }
     .header .header__nav ul li#thick{
-        @apply  py-[.8rem]
+        @apply  pb-[2rem] lg:pb-[0rem]
     }
     .header .header__nav ul li#thick a{
         @apply  hover:text-[#006341] text-[.9rem] lg:text-[.8rem] lg:uppercase lg:font-bold
     }
-    .header .divider {
-        @apply border-[1px] border-gray-200 mx-[1.5rem]
-    }
     .header .header__actions ul{
-        @apply flex gap-[1.5rem]
+        @apply flex gap-[2rem]
+    }
+    .header .header__actions {
+        @apply border-t-[1px] border-gray-200
     }
     .header .header__actions ul li{
         @apply py-[.8rem] text-[.8rem]
@@ -57,16 +57,16 @@
         @apply p-1 w-[5rem] text-center
     }
     .header .header__actions ul li#store{
-        @apply px-[1.5rem] text-gray-600 
+        @apply px-[1.5rem] pt-[2rem] text-gray-600 
     }
     .header .header__actions ul li#dark{
         @apply p-1 w-[6rem] text-center
     }
     .toggle__menu{
-        @apply flex flex-col gap-[.2rem] lg:hidden
+        @apply flex flex-col gap-[.25rem] cursor-pointer lg:hidden hover:bg-gray-200 p-[.5rem] rounded-[10rem] ease-in-out duration-300
     }
     .toggle__menu span{
-        @apply w-[1.2rem] h-[2px] bg-[#2b2b2b] block rounded-full
+        @apply w-[1rem] h-[2px] bg-[#2b2b2b] block rounded-full
     }
     .header .branding{
         @apply lg:flex lg:flex-row
@@ -85,5 +85,67 @@
     }
     .header .header__actions2 ul li#dark{
         @apply p-1 w-[5rem] text-center text-[.8rem]
+    }
+    .header .toggle__menu.open span:first-child {
+        transform: translateY(6px) rotate(45deg);
+        transition: 0.5s ease;
+    }
+    .header .toggle__menu.open span:nth-child(2) {
+        opacity: 0;
+        transition: 0.5s ease;
+    }
+    .header .toggle__menu.open span:last-child {
+        transform: translateY(-6px) rotate(135deg);
+        transition: 0.5s ease;
+    }
+    .blurred{
+       @apply absolute bg-black top-[4.1rem] left-[0rem] w-[100vw] transition-all opacity-30 lg:hidden
+    }
+    .blurred.open{
+        @apply right-[0rem] h-[100vh] transition-all
+    }
+
+    /*----bokals----*/
+    .kalbo{
+        @apply bg-white pt-[5rem]
+    }
+    .kalbo__wrapper{
+        @apply bg-[#f1f8f5]
+    }
+    .kalbo__wrapper h2{
+        @apply p-[2rem] text-[1.5rem] font-bold text-center
+    }
+    .kalbo__nav{
+        @apply flex justify-between
+    }
+    .kalbo__nav li.active{
+        @apply  border-[#006341]
+    }
+    .kalbo__nav span{
+        @apply text-[#cba258]
+    }
+    .kalbo__nav li{
+        @apply text-dark px-[1.5rem] text-center font-bold border-b-4 border-transparent pb-[1rem]
+    }
+    .kalbo__desc__wrapper{
+        @apply bg-gray-200 p-[2rem]
+    }
+    .kalbo__item__content{
+        @apply hidden
+    }
+    .kalbo__item__content img{
+        @apply w-[30rem]
+    }
+    .kalbo__item__content.active {
+        @apply flex flex-col gap-[2rem] items-center justify-center
+    }
+    .kalbo__text h2{
+        @apply font-bold text-[1rem] mb-[2rem]
+    }
+    .kalbo__text table tr td:first-child{
+        @apply font-light
+    }
+    .kalbo__text table tr{
+        @apply h-[5rem] flex flex-col
     }
 }
