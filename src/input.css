@@ -303,10 +303,10 @@
         @apply w-full ease-in-out duration-300
     }
     .kalbo__desc__wrapper{
-        @apply bg-[#d4e9e2] h-[500px] lg:h-[250px]
+        @apply bg-[#d4e9e2] h-[500px] lg:h-[270px]
     }
     .kalbo__item__content{
-        @apply p-[1.5rem] absolute top-[4rem] opacity-0 ease-in duration-300 lg:flex lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:max-w-[50rem] lg:top-[8rem]    
+        @apply p-[1.5rem] absolute top-[4rem] opacity-0 ease-in duration-300 lg:flex lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:max-w-[50rem] lg:top-[5rem]    
     }
     .kalbo__item__content.active{
         @apply  opacity-[1] top-0  ease-in duration-[.3s] pt-[2rem]
@@ -326,8 +326,31 @@
 
     /* swirl */
     .swirl{
-        @apply bg-[url('./img/rewards/greenbgswirl.png')] h-[650px]
+        @apply lg:bg-[url('./img/rewards/greenbgswirl.png')] bg-cover
     }
+    .swirl .swirl__inner { 
+        @apply bg-[#d4e9e2] items-center 
+        p-[2.5rem] lg:bg-[#d4e9e2] lg:flex lg:px-[10rem] justify-center lg:gap-[8rem] lg:py-0
+    }
+    .swirl .swirl__wrapper{
+        @apply bg-[#d4e9e2] lg:py-[1rem]
+    }
+    .swirl .swirl__text{
+        @apply text-center flex flex-col gap-[1.5rem] lg:max-w-[35rem]
+    }
+    .swirl .swirl__text h2{
+        @apply text-[1.5rem] font-bold max-w-[15rem] mx-auto lg:max-w-full
+    }
+    .swirl .swirl__text a:first-child{
+        @apply underline text-[#006341] hover:no-underline font-normal
+    }
+    .swirl .swirl__text a#join{
+        @apply max-w-[14rem] font-bold text-[.95rem] mx-auto
+    }
+    .swirl .swirl__text p{
+        @apply text-[.95rem] lg:text-[1rem]
+    }
+    
 
     /* stardrop */
 
