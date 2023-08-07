@@ -9,7 +9,9 @@ module.exports = {
           'light': '#ffffff',
           'asul':'#0066b8',
         },
-  
+        backgroundImage:{
+          'star':"url('./img/rewards/star.png')"
+        },
       },
     },
     plugins: [],

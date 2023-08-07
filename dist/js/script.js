@@ -3,9 +3,9 @@ const kalboContent = document.querySelectorAll(".kalbo__item__content");
 kalboNav.forEach((kalbo) => {
  kalbo.addEventListener("click", () => {
   removeActiveKalbo();
-  kalbo.style = "transition:.5s ";
-  kalbo.classList.add("active");
   kalbo.style = "transition:.5s";
+  kalbo.classList.add("active");
+  kalbo.style = "transition:.5s ease";
   const activeContent = document.querySelector(`#${kalbo.id}-content`);
   removeActiveContent();
   activeContent.classList.add("active");
