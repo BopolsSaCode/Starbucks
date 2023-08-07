@@ -10,7 +10,7 @@ module.exports = {
           'asul':'#0066b8',
         },
         backgroundImage:{
-          'star':"url('./img/rewards/star.png')"
+          'star':"url('./img/starng pasko.svg')"
         },
       },
     },

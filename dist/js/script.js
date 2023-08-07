@@ -34,4 +34,20 @@ toggleMenu.addEventListener("click", () => {
     blur.classList.toggle("open");
 });
 
+const drop = document.querySelectorAll(".header__nav ul.nav li");
+const drop1 = document.querySelectorAll(".stardrop__nav ul.nav li");
+drop.forEach((link) => {
+ link.addEventListener("click", () => {
+  link.nextElementSibling.classList.toggle("open");
+  link.querySelector("i").classList.toggle("open");
+ });
+});
+
+drop1.forEach((link) => {
+    link.addEventListener("click", () => {
+        link.querySelector(".drop1").classList.toggle("open");
+        link.querySelector("i").classList.toggle("open");
+    });
+    }); 
+
 
