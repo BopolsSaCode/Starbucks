@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face{
+    font-family: BorelFont;
+    src: url('../fonts/Borel-Regular.woff');
+}
+
 .container {
     max-width: 90rem;
     margin: 0 auto;
@@ -30,6 +35,9 @@
 
 
 @layer components{
+    .white{
+        @apply hidden ease-out duration-[.1s]
+    }
     .header{
         @apply bg-white fixed w-full drop-shadow-lg
     }
@@ -40,7 +48,7 @@
         @apply absolute bg-white top-[4.1rem] right-[-40rem] h-[100vh] w-[65vw] flex flex-col transition-all p-[2rem] lg:p-[0rem] lg:static lg:flex lg:flex-row lg:h-[0%]
     }
     .header .header__nav.open{
-        @apply right-[0rem]  transition-all z-[1000]
+        @apply right-[0rem]  transition-all z-[1000] block
     }
     .header .header__nav ul {
         @apply flex flex-col lg:flex-row lg:p-[0rem] lg:gap-[2rem]
@@ -183,7 +191,7 @@
 
     /*----cash----*/
     .cash{
-        @apply pb-[5rem] bg-[#f2f0eb]
+        @apply bg-[#f2f0eb]
     }
     .cash__container{
         @apply max-w-[90rem] m-auto p-[1rem]   
@@ -201,40 +209,41 @@
         @apply text-center text-[.9rem] lg:max-w-[42rem] lg:text-[1rem] lg:mx-auto
     }
     .cash .cash__content{
-        @apply flex flex-col gap-[2rem] lg:flex-row items-start lg:gap-[2.8rem] pb-[1rem] border-b-[1px] border-gray-300
+        @apply flex flex-col gap-[2rem] lg:flex-row items-start lg:gap-[2.8rem] pb-[1rem]
      }
-     .cash .cash__content2{
-        @apply flex flex-col gap-[2rem] lg:flex-row items-start
-     }    
-     .cash .cash__dollar h3{
-        @apply font-bold lg:text-[1.3rem]
-     }
-     .cash .cash__dollar span{
-        @apply  text-[.9rem] lg:text-[1rem]
-     }
-     .cash .cash__items {
-        @apply flex gap-[1.5rem]  
-     }
-     .cash .cash__items img#img1{
-        @apply w-[7rem] lg:w-[8rem]
-     }
-     .cash .cash__items img#img2{
-        @apply w-[32rem] lg:w-[8rem]
-     }
-     .cash .cash__items img{
-        @apply w-[21rem] lg:w-[8rem]
-     }
-     .cash .cash__items__text p{
-        @apply text-[.89rem] lg:max-w-[17.8rem] lg:text-[1rem]
-     }
-     .cash .cash__items__text h4{
-        @apply text-[1rem] font-semibold
-     }
-     .cash .cash__items__text {
-        @apply flex flex-col gap-[1rem]
-     }
-
-
+    .cash .cash__content2{
+    @apply flex flex-col gap-[2rem] lg:flex-row items-start
+    }    
+    .cash .cash__dollar h3{
+    @apply font-bold lg:text-[1.3rem]
+    }
+    .cash .cash__dollar span{
+    @apply  text-[.9rem] lg:text-[1rem]
+    }
+    .cash .cash__items {
+    @apply flex gap-[1.5rem]  
+    }
+    .cash .cash__items img#img1{
+    @apply w-[7rem] lg:w-[8rem]
+    }
+    .cash .cash__items img#img2{
+    @apply w-[32rem] lg:w-[8rem]
+    }
+    .cash .cash__items img{
+    @apply w-[21rem] lg:w-[8rem]
+    }
+    .cash .cash__items__text p{
+    @apply text-[.89rem] lg:max-w-[17.8rem] lg:text-[1rem]
+    }
+    .cash .cash__items__text h4{
+    @apply text-[1rem] font-semibold
+    }
+    .cash .cash__items__text {
+    @apply flex flex-col gap-[1rem]
+    }
+.cash .cash__content:not(:last-child) {
+    @apply border-b border-gray-300;
+}
 
     /*---extras---*/
     .extras{
@@ -329,8 +338,7 @@
         @apply lg:bg-[url('./img/rewards/greenbgswirl.png')] bg-cover
     }
     .swirl .swirl__inner { 
-        @apply bg-[#d4e9e2] items-center 
-        p-[2.5rem] lg:bg-[#d4e9e2] lg:flex lg:px-[10rem] justify-center lg:gap-[8rem] lg:py-0
+        @apply items-center p-[2.5rem] lg:bg-[#d4e9e2] lg:flex lg:px-[10rem] justify-center lg:gap-[8rem] lg:py-0
     }
     .swirl .swirl__wrapper{
         @apply bg-[#d4e9e2] lg:py-[1rem]
@@ -354,40 +362,101 @@
 
     /* stardrop */
 
-.stardrop__wrapper {
-    @apply flex flex-col items-center gap-8 pb-4 border-b-2 border-gray-300;
-  }
-  
-  .stardrop__nav ul.nav {
-    @apply flex flex-col;
-  }
-  
-  .stardrop__nav ul.nav li a {
-    @apply flex justify-between items-center px-7 text-xl font-semibold text-gray-800;
-  }
-  
-  .stardrop__nav ul.nav li a i {
-    @apply text-gray-800 transition duration-100;
-  }
-  
-  .stardrop__nav ul.drop1 {
-    @apply m-8 max-h-0 overflow-hidden transition duration-500 bg-white;
-  }
-  
-  .stardrop__nav ul.drop1 li {
-    @apply py-2 cursor-pointer text-gray-800;
-  }
-  
-  .stardrop__nav ul.drop1 li:hover {
-    @apply text-blue-500;
-  }
-  
-  .stardrop__nav ul.drop1.open {
-    @apply max-h-[60rem] transition duration-500 bg-white;
-  }
-  
-  .stardrop__nav ul.nav li a i.open {
-    @apply rotate-180;
-  }
-  
+    .stardrop__wrapper {
+        @apply  flex flex-col gap-8 pb-4 border-b-2 ;
+    }
+    .stardrop .stardrop__container{
+        @apply  px-[1rem] py-[1rem] lg:max-w-[90rem] mx-auto
+    }
+    .stardrop__nav ul.nav {
+        @apply flex flex-col lg:flex-row gap-[2rem];
+    }
+    .stardrop__nav ul.nav li a#title {
+        @apply pb-[1.6rem]  flex justify-between text-[1rem] font-semibold text-black;
+    }
+    
+    .stardrop__nav ul.nav li a i {
+        @apply text-gray-800 ease-in-out duration-[.3s] lg:hidden;
+    }
+    
+    .stardrop__nav ul.drop1 {
+        @apply  max-h-0 overflow-hidden ease-in-out duration-[.3s] bg-white lg:max-h-[50vh] flex flex-col gap-[1rem];
+    }
+
+    .stardrop__nav ul.drop1 a {
+        @apply py-2 cursor-pointer text-gray-500 ease-in-out duration-[.3s];
+    }
+    
+    .stardrop__nav ul.drop1 a:hover {
+        @apply text-gray-900;
+    }
+    
+    .stardrop__nav ul.drop1.open {
+        @apply max-h-[60rem] transition duration-500 bg-white;
+    }
+    
+    .stardrop__nav ul.nav li a i.open {
+        @apply rotate-180;
+    }
+
+  /*----sb-content----*/
+    .sb-content {
+        @apply bg-[#f9f9f9]
+    }
+    .sb-content .sb-content__wrapper{
+        @apply flex flex-col gap-[1rem]   
+    }
+    .sb-content .sb-content__title{
+        @apply text-[.9rem] flex flex-col gap-[.5rem]
+    }
+    .sb-content a {
+        @apply underline hover:no-underline text-[#006341]
+    }
+    .sb-content .sb-content__left{
+        @apply flex flex-col gap-[1.8rem] lg:flex-row
+    }
+    .sb-content .sb-content__right{
+        @apply flex flex-col gap-[1.8rem] lg:flex-row
+    }
+    .sb-content .sb-content__left .sb-content__left__text{
+        @apply flex flex-col gap-[.5rem]
+    }
+    .sb-content .sb-content__right .sb-content__right__text{
+        @apply flex flex-col gap-[.5rem]
+    }
+    .sb-content .sb-content__info p{
+        @apply text-[.9rem]
+    }
+    .sb-content .sb-content__info h2{
+        @apply text-[.9rem] font-bold text-[#686868]
+    }
+    .sb-content .sb-content__info{
+        @apply flex flex-col gap-[2rem]
+    }
+
+    /*---footer---*/
+    .footer .footer__icons ul{
+        @apply flex items-center 
+    }
+    .footer .footer__icons ul li{
+        @apply flex text-[2rem] text-[#212121] px-[.65rem] py-[.1rem] hover:bg-gray-200 hover:rounded-full ease-in-out duration-[.3s]
+    }
+    .footer .footer__list ul li a{
+        @apply hover:underline
+    }
+    .footer .footer__wrapper{
+        @apply flex flex-col gap-[1.5rem]
+    }
+    .footer .footer__wrapper p{
+        @apply text-[.85rem] text-[#686868]
+    }
+    .footer .footer__list ul{
+        @apply flex flex-col gap-[1rem] lg:flex-row
+    }
+    .footer .footer__list ul li{
+        @apply pr-[.9rem]
+    }
+    .footer .footer__list ul li:not(:last-child){
+        @apply lg:border-r-[1px] lg:border-gray-400
+    }
 }

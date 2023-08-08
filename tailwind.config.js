@@ -7,7 +7,7 @@ module.exports = {
           'gurey':'#2c2c32',
           'dark':'#25252b',
           'light': '#ffffff',
-          'asul':'#0066b8',
+          'lasalle':'#006341',
         },
         backgroundImage:{
           'star':"url('./img/starng pasko.svg')"
