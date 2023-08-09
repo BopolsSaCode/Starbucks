@@ -6,7 +6,7 @@ module.exports = {
         colors:{
           'gurey':'#2c2c32',
           'dark':'#25252b',
-          'light': '#ffffff',
+          'mink': '#eb81a5',
           'lasalle':'#006341',
         },
         backgroundImage:{

@@ -18,6 +18,11 @@
     padding:.4rem 1rem;
     border:1px solid transparent;
 }
+.h-btn{
+    display:inline-block;
+    padding:.2rem .8rem;
+    border:1px solid transparent;
+}
 .btn.bg--light{
     @apply bg-white border-[1px] border-black hover:bg-[#e2e2e2] text-dark rounded-full
 }
@@ -32,6 +37,15 @@
 .btn.bg--lightgreen{
     @apply bg-[#00754a] hover:bg-[#37a77e] text-white rounded-full
 }
+.h-btn.bg--green{
+    @apply border-[1] border-[#1e3932] rounded-full hover:bg-[#dc7698]
+}
+.h-btn.bg--white{
+    @apply border-[1] border-white rounded-full hover:bg-[#234039]
+}
+.h-btn.bg--black{
+    @apply border-[1] border-black rounded-full hover:bg-[#8380e0]
+}
 
 
 @layer components{
@@ -42,13 +56,16 @@
         @apply bg-white fixed w-full drop-shadow-lg
     }
     .header .header__wrapper {
-        @apply px-[1rem] py-[.8rem] lg:p-[2rem]  flex items-center justify-between relative
+        @apply flex relative items-center justify-between
+    }
+    .header .branding{
+        @apply flex gap-[1rem] items-center
     }
     .header .header__nav {
-        @apply absolute bg-white top-[4.1rem] right-[-40rem] h-[100vh] w-[65vw] flex flex-col transition-all p-[2rem] lg:p-[0rem] lg:static lg:flex lg:flex-row lg:h-[0%]
+        @apply absolute bg-white top-[4rem] right-[-90rem] h-[100vh] w-[80vw] flex flex-col p-[2rem] lg:p-[0rem] lg:static lg:flex lg:flex-row lg:h-[0%] lg:items-center lg:w-[0vw] lg:justify-between
     }
     .header .header__nav.open{
-        @apply right-[0rem]  transition-all z-[1000] block
+        @apply right-[-5rem] transition-all z-[1000] block
     }
     .header .header__nav ul {
         @apply flex flex-col lg:flex-row lg:p-[0rem] lg:gap-[2rem]
@@ -87,13 +104,13 @@
         @apply lg:flex lg:flex-row
     }
     .header .header__actions2 {
-        @apply hidden lg:block
+        @apply hidden lg:flex
     }
     .header .header__actions2 ul{
         @apply lg:flex lg:items-center lg:gap-[.5rem]
     }
     .header .header__actions2 ul li#store a{
-        @apply lg:hover:text-[#006341] lg:text-[.8rem] lg:font-bold lg:mx-[1rem]
+        @apply lg:hover:text-[#006341] lg:text-[.8rem] lg:font-bold
     }
     .header .header__actions2 ul li#light{
         @apply p-1 w-[4rem] text-center text-[.8rem]
@@ -115,7 +132,7 @@
     }
 
     .blurred{
-       @apply absolute bg-black top-[4.1rem] left-[0rem] w-[100vw] transition-all opacity-30 lg:hidden
+       @apply absolute bg-black top-[4.1rem] left-[-10rem] w-[100vw] transition-all opacity-30 lg:hidden
     }
     .blurred.open{
         @apply right-[0rem] h-[100vh] transition-all
@@ -459,4 +476,62 @@
     .footer .footer__list ul li:not(:last-child){
         @apply lg:border-r-[1px] lg:border-gray-400
     }
+
+    /*---h-banner---*/
+    .h-banner{
+        @apply pt-[6rem]
+    }
+    .h-banner .h-banner__wrapper{
+        @apply flex flex-col gap-[2rem]
+    }
+    .h-banner .h-banner__content {
+        @apply grid lg:grid-cols-2 lg:items-center bg-mink
+    }
+    .h-banner .h-banner__content#cnt1 {
+        @apply bg-lasalle 
+    }
+    .h-banner .h-banner__content#cnt2 {
+        @apply bg-[#8f8bf4] 
+    }
+    .h-banner .h-banner__content#cnt3 {
+        @apply bg-[#f1ff67] 
+    }
+    .h-banner .h-banner__content:nth-child(odd) img{
+        @apply lg:order-2
+    }
+    .h-banner .h-banner__text{
+        @apply order-1 w-full py-[2rem] px-[2rem] text-[#1e3932] text-center flex flex-col gap-[1.5rem] lg:w-full lg:gap-[1.8rem]
+    }
+    .h-banner .h-banner__text#txt1{
+        @apply text-white
+    }
+    .h-banner .h-banner__text#txt2{
+        @apply text-black
+    }
+    .h-banner .h-banner__text#txt3{
+        @apply text-black
+    }
+    .h-banner .h-banner__text h2{
+        @apply text-[1.8rem] font-semibold lg:text-[3rem] lg:font-bold lg:max-w-[15rem] lg:m-auto lg:leading-[1.2]
+    }
+    .h-banner .h-banner__text#txt1 h2{
+        @apply lg:max-w-[28rem]
+    }
+    .h-banner .h-banner__text#txt2 h2{
+        @apply lg:max-w-[28rem]
+    }
+    .h-banner .h-banner__text#txt3 h2{
+        @apply lg:max-w-[28rem]
+    }
+    .h-banner .h-banner__text a{
+        @apply text-[.9rem] font-semibold max-w-[6.5rem] lg:mx-auto lg:text-[1rem] lg:max-w-[7rem] mx-auto
+    }
+    .h-banner .h-banner__text a#btn1{
+        @apply max-w-[7rem] lg:max-w-[7.5rem]
+    }
+    .h-banner .h-banner__text p{
+        @apply text-[1.4rem] font-medium lg:max-w-[29rem] lg:mx-auto
+    }
+
+
 }
