@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face{
-    font-family: BorelFont;
-    src: url('../fonts/Borel-Regular.woff');
+    font-family: SodosanFont;
+    src: url('../fonts/SoDoSans-Regular.woff');
 }
 
 .container {
@@ -23,6 +23,7 @@
     padding:.2rem .8rem;
     border:1px solid transparent;
 }
+
 .btn.bg--light{
     @apply bg-white border-[1px] border-black hover:bg-[#e2e2e2] text-dark rounded-full
 }
@@ -453,10 +454,22 @@
 
     /*---footer---*/
     .footer .footer__icons ul{
-        @apply flex items-center 
+        @apply flex items-center gap-[.5rem]
     }
     .footer .footer__icons ul li{
-        @apply flex text-[2rem] text-[#212121] px-[.65rem] py-[.1rem] hover:bg-gray-200 hover:rounded-full ease-in-out duration-[.3s]
+        @apply flex text-[2.1rem] text-[#212121] px-[.65rem] py-[.6rem] bg-transparent hover:bg-gray-300 ease-in-out duration-[.5s] rounded-full
+    }
+    .footer .footer__icons ul li#crcl{
+        @apply flex text-[2.1rem] text-[#212121]  px-[.65rem] py-[.1rem]
+    }
+    .footer .footer__icons ul li a#bgblack{
+        @apply text-[1.3rem] py-[.1rem] px-[.5rem] bg-[#212121] rounded-full text-white
+    }
+    .footer .footer__icons ul li a#bgoblong{
+        @apply text-[1.25rem] py-[.1rem] px-[.4rem] bg-[#212121] rounded-full text-white
+    }
+    .footer .footer__icons ul li a#bgoblong1{
+        @apply text-[1.25rem] py-[.1rem] px-[.35rem] bg-[#212121] rounded-full text-white
     }
     .footer .footer__list ul li a{
         @apply hover:underline

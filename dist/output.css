@@ -1707,25 +1707,77 @@ video {
 .footer .footer__icons ul {
   display: flex;
   align-items: center;
+  gap: .5rem;
 }
 
 .footer .footer__icons ul li {
+  display: flex;
+  border-radius: 9999px;
+  background-color: transparent;
+  padding-left: .65rem;
+  padding-right: .65rem;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  font-size: 2.1rem;
+  --tw-text-opacity: 1;
+  color: rgb(33 33 33 / var(--tw-text-opacity));
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer .footer__icons ul li:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.footer .footer__icons ul li#crcl {
   display: flex;
   padding-left: .65rem;
   padding-right: .65rem;
   padding-top: .1rem;
   padding-bottom: .1rem;
-  font-size: 2rem;
+  font-size: 2.1rem;
   --tw-text-opacity: 1;
   color: rgb(33 33 33 / var(--tw-text-opacity));
-  transition-duration: .3s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer .footer__icons ul li:hover {
+.footer .footer__icons ul li a#bgblack {
   border-radius: 9999px;
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(33 33 33 / var(--tw-bg-opacity));
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  font-size: 1.3rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.footer .footer__icons ul li a#bgoblong {
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 33 33 / var(--tw-bg-opacity));
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  padding-left: .4rem;
+  padding-right: .4rem;
+  font-size: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.footer .footer__icons ul li a#bgoblong1 {
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 33 33 / var(--tw-bg-opacity));
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  padding-left: .35rem;
+  padding-right: .35rem;
+  font-size: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .footer .footer__list ul li a:hover {
@@ -2141,9 +2193,9 @@ video {
 }
 
 @font-face{
-  font-family: BorelFont;
+  font-family: SodosanFont;
 
-  src: url('../fonts/Borel-Regular.woff');
+  src: url('../fonts/SoDoSans-Regular.woff');
 }
 
 .container {
